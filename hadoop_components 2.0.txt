@@ -24,13 +24,13 @@ The components of Hadoop 2.x are:
     - This process is a heart of HDFS, if it is down HDFS is not accessible any more
 
  b) Secondary Name Node
-	  - NameNode in hadoop is a specially dedicated node in HDFS cluster whose main function is to take checkpoints of the file system            metadata present on namenode.
+    - NameNode in hadoop is a specially dedicated node in HDFS cluster whose main function is to take checkpoints of the file system            metadata present on namenode.
     - only single instance of this process runs on a cluster
     - This process can run on a master node (for smaller clusters) or can run on a separate node 
       (in larger clusters) depends on the size of the cluster
     - It is not a backup namenode.
-	  - The Secondary NameNode is a helper to the primary NameNode but not replace for primary namenode.
-	  - As the NameNode is the single point of failure in HDFS, if NameNode fails entire HDFS file system is lost. So in order to overcome this, 
+    - The Secondary NameNode is a helper to the primary NameNode but not replace for primary namenode.
+    - As the NameNode is the single point of failure in HDFS, if NameNode fails entire HDFS file system is lost. So in order to overcome this, 
 	  Hadoop implemented Secondary NameNode whose main function is to store a copy of FsImage file and edits log file.
     - It manages the metadata for the Name Node. In the sense, it reads the information written in edit logs (by Name Node) and creates an updated file of current cluster metadata
     - Then it transfers that file back to Name Node so that fsimage file can be updated
